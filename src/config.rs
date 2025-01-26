@@ -12,7 +12,7 @@ pub enum PersistenceMode {
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Config {
-	persistence_mode: PersistenceMode,
+	pub persistence_mode: PersistenceMode,
 }
 
 impl Config {
