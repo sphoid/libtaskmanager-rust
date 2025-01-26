@@ -140,6 +140,10 @@ impl ProjectData {
 	pub fn get_project_mut(&mut self, project_id: &Uuid) -> Option<&mut Project> {
 		self.projects.get_mut(project_id)
 	}
+
+	pub fn get_projects(&self) -> Vec<&Project> {
+		self.projects.values().collect()
+	}
 }
 
 fn load_projects() -> Result<HashMap<Uuid, Project>, Box<dyn Error>> {
