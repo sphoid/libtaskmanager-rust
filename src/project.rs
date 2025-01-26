@@ -132,6 +132,14 @@ impl ProjectData {
 
 		Ok(true)
 	}
+
+	pub fn get_project(&self, project_id: &Uuid) -> Option<&Project> {
+		self.projects.get(project_id)
+	}
+
+	pub fn get_project_mut(&mut self, project_id: &Uuid) -> Option<&mut Project> {
+		self.projects.get_mut(project_id)
+	}
 }
 
 fn load_projects() -> Result<HashMap<Uuid, Project>, Box<dyn Error>> {
