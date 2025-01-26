@@ -57,7 +57,7 @@ pub struct ProjectTask {
 }
 
 impl ProjectTask {
-	fn new(name: &str, description: &str, type_: &str, status: &str) -> Self {
+	pub fn new(name: &str, description: &str, type_: &str, status: &str) -> Self {
 		let task_type_result = ProjectTaskType::from_str(type_);
 		let task_type = match task_type_result {
 			Ok(task_type) => task_type,
