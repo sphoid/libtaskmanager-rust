@@ -9,7 +9,7 @@ use std::collections::HashMap;
 
 const PROJECTS_FILE: &str = "projects.json";
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum ProjectTaskType {
 	Default,
 }
@@ -25,8 +25,7 @@ impl FromStr for ProjectTaskType {
 	}
 }
 
-
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub enum ProjectTaskStatus {
 	Default,
 	Todo,
@@ -47,7 +46,7 @@ impl FromStr for ProjectTaskStatus {
 	}
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct ProjectTask {
 	pub id: Uuid,
 	pub name: String,
@@ -79,7 +78,7 @@ impl ProjectTask {
 	}
 }
 
-#[derive(Debug, Serialize, Deserialize, Clone)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Project {
 	pub id: Uuid,
 	pub name: String,
